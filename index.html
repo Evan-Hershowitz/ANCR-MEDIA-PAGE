@@ -4,6 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Nautisk</title>
+
+  <!-- SECURITY HEADERS via meta tags -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self';" />
+
+  <!-- LEGAL META TAGS -->
+  <meta name="description" content="The Nautisk — independent journalism covering finance, law, healthcare, and politics. Anchored in truth." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="The Nautisk" />
+  <meta property="og:title" content="The Nautisk" />
+  <meta property="og:description" content="Independent journalism covering finance, law, healthcare, and politics. Anchored in truth." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.thenautisk.com" />
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Georgia, serif; background: #03213a; color: #e8eef4; }
@@ -74,7 +91,10 @@
     .footer-col a:hover { color: #d6e8f5; }
     .footer-bottom { border-top: 1px solid #1a4a6e; padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .footer-bottom span { font-size: 12px; color: #4a7fa8; letter-spacing: 0.06em; }
-    .footer-anchor-wrap { display: flex; justify-content: center; align-items: center; }
+    .footer-anchor { font-size: 28px; color: #ffffff; opacity: 0.8; }
+    .footer-legal { border-top: 1px solid #1a4a6e; padding-top: 1rem; margin-top: 1rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+    .footer-legal a { font-size: 11px; color: #4a7fa8; text-decoration: none; letter-spacing: 0.06em; }
+    .footer-legal a:hover { color: #8ab4d4; }
 
     @media (max-width: 768px) {
       nav { flex-direction: column; gap: 1rem; }
@@ -83,6 +103,7 @@
       .coverage-grid { grid-template-columns: 1fr 1fr; }
       .white-section { margin: 1rem; }
       .footer-top { flex-direction: column; }
+      .footer-legal { gap: 1rem; }
     }
   </style>
 </head>
@@ -311,31 +332,20 @@
       <h4>Contact</h4>
       <p>Manhattan, New York</p>
       <a href="mailto:evanhershowitz@ancrmedia.com">evanhershowitz@ancrmedia.com</a>
-      <a href="https://instagram.com/ancr_media" target="_blank">@ancr_media</a>
+      <a href="https://instagram.com/ancr_media" target="_blank" rel="noopener noreferrer">@ancr_media</a>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 The Nautisk. All rights reserved.</span>
-    <div class="footer-anchor-wrap">
-      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="80" height="80">
-        <line x1="60" y1="25" x2="60" y2="95" stroke="#ffffff" stroke-width="3" opacity="0.85" />
-        <line x1="35" y1="40" x2="85" y2="40" stroke="#ffffff" stroke-width="3" opacity="0.85" />
-        <circle cx="60" cy="22" r="7" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.85" />
-        <path fill="none" stroke="#ffffff" stroke-width="3" opacity="0.85" d="M35,40 C20,40 15,60 35,95 C42,108 55,110 60,95 C65,110 78,108 85,95 C105,60 100,40 85,40" />
-        <path fill="none" stroke="#4a8aaa" stroke-width="4" stroke-linecap="round" opacity="0.8" d="M15,95 C20,80 30,75 40,85 C50,95 45,105 55,100 C65,95 60,80 70,75 C80,70 90,80 95,70 C100,60 95,45 85,40" />
-        <path fill="none" stroke="#4a8aaa" stroke-width="3" stroke-linecap="round" opacity="0.6" d="M10,105 C18,90 28,88 35,98 C42,108 38,115 45,112" />
-        <circle cx="40" cy="85" r="2.5" fill="none" stroke="#6aaac8" stroke-width="1" opacity="0.7" />
-        <circle cx="55" cy="100" r="2.5" fill="none" stroke="#6aaac8" stroke-width="1" opacity="0.7" />
-        <circle cx="70" cy="75" r="2" fill="none" stroke="#6aaac8" stroke-width="1" opacity="0.6" />
-        <circle cx="85" cy="60" r="2" fill="none" stroke="#6aaac8" stroke-width="1" opacity="0.55" />
-        <circle cx="92" cy="48" r="1.5" fill="none" stroke="#6aaac8" stroke-width="1" opacity="0.5" />
-        <path fill="none" stroke="#2a6a8a" stroke-width="2.5" stroke-linecap="round" opacity="0.5" d="M25,90 C30,78 22,65 30,55 C38,45 48,48 45,40" />
-        <circle cx="30" cy="72" r="1.5" fill="none" stroke="#6aaac8" stroke-width="1" opacity="0.45" />
-        <circle cx="34" cy="55" r="1.5" fill="none" stroke="#6aaac8" stroke-width="1" opacity="0.4" />
-        <path fill="none" stroke="#4a8aaa" stroke-width="2" stroke-linecap="round" opacity="0.4" d="M15,95 C8,100 5,110 12,112 C18,114 20,108 15,105" />
-      </svg>
-    </div>
+    <span class="footer-anchor">⚓</span>
     <span>Manhattan, New York</span>
+  </div>
+  <div class="footer-legal">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+    <a href="#">Editorial Standards</a>
+    <a href="#">Corrections Policy</a>
+    <a href="#">Advertise</a>
   </div>
 </footer>
 
