@@ -27,49 +27,60 @@
     .dropdown-menu a:hover { background: #0a3352; color: #d6e8f5; }
     .dropdown:hover .dropdown-menu { display: block; }
 
-    /* WAVE BG */
-    .wave-bg { position: relative; overflow: hidden; }
-    .wave-bg::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='none' stroke='%232a5f8a' stroke-width='1' d='M0,160 C180,100 360,220 540,160 C720,100 900,220 1080,160 C1260,100 1350,180 1440,160'/%3E%3Cpath fill='none' stroke='%232a5f8a' stroke-width='1' d='M0,200 C180,140 360,260 540,200 C720,140 900,260 1080,200 C1260,140 1350,220 1440,200'/%3E%3Cpath fill='none' stroke='%232a5f8a' stroke-width='0.5' d='M0,240 C180,180 360,300 540,240 C720,180 900,300 1080,240 C1260,180 1350,260 1440,240'/%3E%3C/svg%3E"); background-repeat: repeat-y; background-size: 100% auto; opacity: 0.3; pointer-events: none; }
+    /* HERO - stays dark/nautical */
+    .hero { padding: 5rem 2.5rem 4rem; text-align: center; border-bottom: 1px solid #1a4a6e; background: #03213a; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='none' stroke='%232a5f8a' stroke-width='1' d='M0,160 C180,100 360,220 540,160 C720,100 900,220 1080,160 C1260,100 1350,180 1440,160'/%3E%3Cpath fill='none' stroke='%232a5f8a' stroke-width='1' d='M0,200 C180,140 360,260 540,200 C720,140 900,260 1080,200 C1260,140 1350,220 1440,200'/%3E%3Cpath fill='none' stroke='%232a5f8a' stroke-width='0.5' d='M0,240 C180,180 360,300 540,240 C720,180 900,300 1080,240 C1260,180 1350,260 1440,240'/%3E%3C/svg%3E"); background-repeat: repeat-y; background-size: 100% auto; opacity: 0.3; pointer-events: none; }
+    .hero-rule { width: 60px; height: 2px; background: #4a7fa8; margin: 0 auto 2rem; position: relative; }
+    .hero h1 { font-size: 52px; font-weight: normal; color: #d6e8f5; line-height: 1.2; margin-bottom: 1.25rem; letter-spacing: 0.02em; position: relative; }
+    .hero p { font-size: 16px; color: #7a9bb8; max-width: 500px; margin: 0 auto; line-height: 1.8; font-family: Arial, sans-serif; position: relative; }
 
-    /* HERO */
-    .hero { padding: 5rem 2.5rem 4rem; text-align: center; border-bottom: 1px solid #1a4a6e; }
-    .hero-rule { width: 60px; height: 2px; background: #4a7fa8; margin: 0 auto 2rem; }
-    .hero h1 { font-size: 52px; font-weight: normal; color: #d6e8f5; line-height: 1.2; margin-bottom: 1.25rem; letter-spacing: 0.02em; }
-    .hero p { font-size: 16px; color: #7a9bb8; max-width: 500px; margin: 0 auto; line-height: 1.8; font-family: Arial, sans-serif; }
-
-    /* ABOUT */
-    .about { padding: 4rem 2.5rem; border-bottom: 1px solid #1a4a6e; }
-    .about-inner { max-width: 780px; margin: 0 auto; text-align: center; }
-    .section-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #4a7fa8; font-family: Arial, sans-serif; margin-bottom: 1.5rem; }
-    .about p { font-size: 16px; color: #7a9bb8; line-height: 1.9; font-family: Arial, sans-serif; }
-    .about p strong { color: #d6e8f5; }
+    /* WHITE SECTIONS */
+    .white-section { background: #ffffff; color: #111111; position: relative; overflow: hidden; }
+    .white-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='none' stroke='%23b8d4e8' stroke-width='1' d='M0,160 C180,100 360,220 540,160 C720,100 900,220 1080,160 C1260,100 1350,180 1440,160'/%3E%3Cpath fill='none' stroke='%23b8d4e8' stroke-width='1' d='M0,200 C180,140 360,260 540,200 C720,140 900,260 1080,200 C1260,140 1350,220 1440,200'/%3E%3Cpath fill='none' stroke='%23b8d4e8' stroke-width='0.5' d='M0,240 C180,180 360,300 540,240 C720,180 900,300 1080,240 C1260,180 1350,260 1440,240'/%3E%3C/svg%3E"); background-repeat: repeat-y; background-size: 100% auto; opacity: 0.4; pointer-events: none; }
 
     /* DIVIDER */
-    .divider { display: flex; align-items: center; gap: 1rem; margin: 0 2.5rem; }
-    .divider-line { flex: 1; height: 1px; background: #1a4a6e; }
+    .divider { display: flex; align-items: center; gap: 1rem; margin: 0 2.5rem; background: #fff; padding: 0.5rem 0; }
+    .divider-line { flex: 1; height: 1px; background: #ccdde8; }
     .divider-anchor { color: #4a7fa8; font-size: 22px; }
 
+    /* ABOUT */
+    .about { padding: 4rem 2.5rem; border-bottom: 1px solid #dde8f0; }
+    .about-inner { max-width: 780px; margin: 0 auto; text-align: center; position: relative; }
+    .section-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #4a7fa8; font-family: Arial, sans-serif; margin-bottom: 1.5rem; }
+    .about p { font-size: 16px; color: #333333; line-height: 1.9; font-family: Arial, sans-serif; }
+    .about p strong { color: #03213a; }
+
     /* COVERAGE */
-    .coverage { padding: 3rem 2.5rem; border-bottom: 1px solid #1a4a6e; }
+    .coverage { padding: 3rem 2.5rem; border-bottom: 1px solid #dde8f0; }
+    .coverage .section-label { color: #4a7fa8; }
     .coverage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .coverage-card { border: 1px solid #1a4a6e; padding: 2rem 1.5rem; text-align: center; }
+    .coverage-card { border: 1px solid #ccdde8; padding: 2rem 1.5rem; text-align: center; background: #f7fafc; }
     .coverage-card .icon { font-size: 28px; margin-bottom: 1rem; }
-    .coverage-card h3 { font-size: 15px; color: #d6e8f5; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; font-weight: normal; }
-    .coverage-card p { font-size: 13px; color: #7a9bb8; line-height: 1.7; font-family: Arial, sans-serif; }
+    .coverage-card h3 { font-size: 15px; color: #03213a; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; font-weight: normal; }
+    .coverage-card p { font-size: 13px; color: #555555; line-height: 1.7; font-family: Arial, sans-serif; }
 
     /* COMING SOON */
-    .coming-soon { padding: 4rem 2.5rem; border-bottom: 1px solid #1a4a6e; text-align: center; }
-    .coming-soon h2 { font-size: 22px; font-weight: normal; color: #d6e8f5; margin-bottom: 1rem; }
-    .coming-soon p { font-size: 15px; color: #7a9bb8; font-family: Arial, sans-serif; line-height: 1.8; max-width: 480px; margin: 0 auto; }
+    .coming-soon { padding: 4rem 2.5rem; border-bottom: 1px solid #dde8f0; text-align: center; }
+    .coming-soon h2 { font-size: 22px; font-weight: normal; color: #03213a; margin-bottom: 1rem; }
+    .coming-soon p { font-size: 15px; color: #555555; font-family: Arial, sans-serif; line-height: 1.8; max-width: 480px; margin: 0 auto; }
+
+    /* NEWSLETTER */
+    .newsletter { padding: 3rem 2.5rem; border-bottom: 1px solid #dde8f0; text-align: center; }
+    .newsletter h2 { font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; color: #03213a; font-weight: normal; margin-bottom: 0.75rem; }
+    .newsletter p { font-size: 14px; color: #555555; margin-bottom: 1.5rem; font-family: Arial, sans-serif; }
+    .newsletter-form { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
+    .newsletter-form input { padding: 0.65rem 1rem; border: 1px solid #ccdde8; font-size: 14px; font-family: Arial, sans-serif; width: 260px; color: #111; outline: none; }
+    .newsletter-form button { padding: 0.65rem 1.5rem; border: 1px solid #4a7fa8; background: transparent; font-size: 13px; color: #03213a; letter-spacing: 0.1em; text-transform: uppercase; font-family: Arial, sans-serif; cursor: pointer; }
+    .newsletter-form button:hover { background: #e8f0f7; }
 
     /* CONTACT */
     .contact { padding: 3rem 2.5rem; text-align: center; }
-    .contact h2 { font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; color: #8ab4d4; font-weight: normal; margin-bottom: 0.75rem; }
-    .contact p { font-size: 14px; color: #7a9bb8; margin-bottom: 1rem; font-family: Arial, sans-serif; }
+    .contact h2 { font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; color: #03213a; font-weight: normal; margin-bottom: 0.75rem; }
+    .contact p { font-size: 14px; color: #555555; margin-bottom: 1rem; font-family: Arial, sans-serif; }
     .contact a { color: #4a7fa8; font-size: 14px; font-family: Arial, sans-serif; }
 
     /* FOOTER */
-    footer { padding: 1.5rem 2.5rem; border-top: 1px solid #1a4a6e; display: flex; justify-content: space-between; align-items: center; }
+    footer { padding: 1.5rem 2.5rem; border-top: 1px solid #1a4a6e; display: flex; justify-content: space-between; align-items: center; background: #03213a; }
     footer span { font-size: 12px; color: #4a7fa8; font-family: Arial, sans-serif; letter-spacing: 0.06em; }
 
     @media (max-width: 768px) {
@@ -101,6 +112,7 @@
         <a href="#">Politics</a>
       </div>
     </div>
+    <a href="#" class="nav-btn">Opinion</a>
   </div>
 
   <div class="nav-center">
@@ -109,12 +121,13 @@
   </div>
 
   <div class="nav-right">
+    <a href="#newsletter" class="nav-btn">Newsletter</a>
     <a href="#" class="nav-btn">Sign Up</a>
     <a href="#contact" class="nav-btn">Contact</a>
   </div>
 </nav>
 
-<section class="hero wave-bg">
+<section class="hero">
   <div class="hero-rule"></div>
   <h1>Anchored in truth.<br>Driven by the current.</h1>
   <p>Complex news made understandable — finance, law, healthcare, and politics all in one place.</p>
@@ -126,7 +139,7 @@
   <div class="divider-line"></div>
 </div>
 
-<section class="about wave-bg">
+<section class="about white-section">
   <div class="about-inner">
     <div class="section-label">Who we are</div>
     <p>We shape the world, so it only makes sense that we begin to understand it. Ancr Media exists to make the stories that matter most accessible to everyone — not just the experts. We are achieving our mission if news becomes accessible, but most importantly <strong>UNDERSTANDABLE.</strong></p>
@@ -139,8 +152,8 @@
   <div class="divider-line"></div>
 </div>
 
-<section class="coverage wave-bg" id="coverage">
-  <div class="section-label">What we cover</div>
+<section class="coverage white-section" id="coverage">
+  <div class="section-label" style="position:relative;">What we cover</div>
   <div class="coverage-grid">
     <div class="coverage-card">
       <div class="icon">📈</div>
@@ -165,15 +178,42 @@
   </div>
 </section>
 
-<section class="coming-soon wave-bg">
-  <h2>Stories coming soon.</h2>
-  <p>We are building something worth reading. Our first articles are on their way — check back shortly or get in touch if you have a tip.</p>
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-anchor">⚓</span>
+  <div class="divider-line"></div>
+</div>
+
+<section class="coming-soon white-section">
+  <h2 style="position:relative;">Stories coming soon.</h2>
+  <p style="position:relative;">We are building something worth reading. Our first articles are on their way — check back shortly or get in touch if you have a tip.</p>
 </section>
 
-<section class="contact wave-bg" id="contact">
-  <h2>Get in touch</h2>
-  <p>Tips, press inquiries, or partnerships — we want to hear from you.</p>
-  <a href="mailto:evanhershowitz@ancrmedia.com">evanhershowitz@ancrmedia.com</a>
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-anchor">⚓</span>
+  <div class="divider-line"></div>
+</div>
+
+<section class="newsletter white-section" id="newsletter">
+  <h2 style="position:relative;">Stay in the current</h2>
+  <p style="position:relative;">Sign up for the Ancr Media newsletter — clear, concise, and worth your time.</p>
+  <div class="newsletter-form" style="position:relative;">
+    <input type="email" placeholder="Your email address" />
+    <button>Subscribe</button>
+  </div>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-anchor">⚓</span>
+  <div class="divider-line"></div>
+</div>
+
+<section class="contact white-section" id="contact">
+  <h2 style="position:relative;">Get in touch</h2>
+  <p style="position:relative;">Tips, press inquiries, or partnerships — we want to hear from you.</p>
+  <a href="mailto:evanhershowitz@ancrmedia.com" style="position:relative;">evanhershowitz@ancrmedia.com</a>
 </section>
 
 <footer>
