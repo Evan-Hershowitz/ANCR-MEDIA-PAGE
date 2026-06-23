@@ -34,6 +34,8 @@
     .nav-btn:hover { color: #d6e8f5; }
     .nav-btn-tidepool { font-size: 13px; color: #03213a; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; font-family: Arial, sans-serif; background: #7dd4c0; border: none; cursor: pointer; padding: 0.4rem 0.9rem; border-radius: 20px; font-weight: bold; }
     .nav-btn-tidepool:hover { background: #5bbfaa; color: #03213a; }
+    .nav-btn-depth { font-size: 13px; color: #c0cfe0; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; font-family: Arial, sans-serif; background: transparent; border: 1px solid #4a7fa8; cursor: pointer; padding: 0.4rem 0.9rem; border-radius: 20px; font-weight: bold; }
+    .nav-btn-depth:hover { background: #1a4a6e; color: #d6e8f5; }
 
     .dropdown { position: relative; }
     .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #03213a; border: 1px solid #1a4a6e; min-width: 140px; z-index: 100; margin-top: 0.5rem; }
@@ -109,14 +111,6 @@
 <nav>
   <div class="nav-left">
     <div class="dropdown">
-      <button class="nav-btn">Our Story ▾</button>
-      <div class="dropdown-menu">
-        <a href="#">About Us</a>
-        <a href="#">Our Mission</a>
-        <a href="#">Team</a>
-      </div>
-    </div>
-    <div class="dropdown">
       <button class="nav-btn">News ▾</button>
       <div class="dropdown-menu">
         <a href="#">Finance</a>
@@ -135,8 +129,16 @@
   </div>
 
   <div class="nav-right">
+    <a href="depth.html" class="nav-btn-depth">Depth</a>
+    <div class="dropdown">
+      <button class="nav-btn">Our Story ▾</button>
+      <div class="dropdown-menu">
+        <a href="#">About Us</a>
+        <a href="#">Our Mission</a>
+        <a href="#">Team</a>
+      </div>
+    </div>
     <a href="https://thenautisk.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" class="nav-btn">Newsletter</a>
-    <a href="#" class="nav-btn">Sign Up</a>
     <a href="#contact" class="nav-btn">Contact</a>
   </div>
 </nav>
@@ -325,6 +327,7 @@
       <a href="#">Our Mission</a>
       <a href="#">Newsletter</a>
       <a href="tidepool.html">Tidepool</a>
+      <a href="depth.html">Depth</a>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
