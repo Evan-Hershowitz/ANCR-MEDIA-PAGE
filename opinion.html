@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opinion — The Nautisk</title>
+  <meta name="description" content="Opinion at The Nautisk. Freeform perspectives from contributors across finance, law, healthcare, and politics. By our compass." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Opinion — The Nautisk" />
+  <meta property="og:description" content="By our compass. Independent perspectives from contributors who have something to say." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.thenautisk.com/opinion.html" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Georgia, serif; background: #03213a; color: #e8eef4; }
+
+    /* ── NAV ── */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2.5rem; border-bottom: 1px solid #1a4a6e; background: #03213a; position: relative; z-index: 200; }
+    .nav-logo { font-size: 18px; font-weight: bold; letter-spacing: 0.14em; color: #c0cfe0; text-decoration: none; font-family: Arial, sans-serif; }
+    .nav-logo span { color: #8ab4d4; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 12px; color: #8ab4d4; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; font-family: Arial, sans-serif; }
+    .nav-links a:hover { color: #d6e8f5; }
+    .nav-links .active { color: #d6e8f5; border-bottom: 1px solid #c8a84a; padding-bottom: 2px; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #8ab4d4; border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-nav { display: none; position: fixed; inset: 0; background: #03213a; z-index: 300; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 20px; color: #8ab4d4; text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; font-family: Arial, sans-serif; }
+    .mobile-nav a:hover { color: #d6e8f5; }
+
+    /* ── HERO ── */
+    .page-hero {
+      padding: 5rem 2.5rem 4rem;
+      border-bottom: 1px solid #1a4a6e;
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .fish-bg { position: absolute; inset: 0; pointer-events: none; }
+    .accent-bar { width: 40px; height: 3px; background: #c8a84a; margin-bottom: 1.5rem; position: relative; }
+    .section-tag { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #c8a84a; font-family: Arial, sans-serif; margin-bottom: 1rem; position: relative; }
+    .page-hero h1 { font-size: 52px; font-weight: normal; color: #d6e8f5; line-height: 1.15; margin-bottom: 1rem; position: relative; }
+    .page-hero h1 em { font-style: italic; color: #c8a84a; }
+    .page-hero p { font-size: 16px; color: #7a9bb8; max-width: 560px; line-height: 1.9; font-family: Arial, sans-serif; position: relative; }
+    .tagline { font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: #c8a84a; font-family: Arial, sans-serif; margin-bottom: 2rem; position: relative; opacity: 0.8; }
+
+    /* ── SECTION NAV ── */
+    .section-nav { border-bottom: 1px solid #1a4a6e; padding: 0 2.5rem; display: flex; gap: 2.5rem; overflow-x: auto; }
+    .section-nav a { font-size: 12px; color: #7a9bb8; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; font-family: Arial, sans-serif; padding: 1rem 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+    .section-nav a:hover { color: #d6e8f5; }
+    .section-nav a.active { color: #d6e8f5; border-bottom-color: #c8a84a; }
+
+    /* ── MANIFESTO STRIP ── */
+    .manifesto-strip {
+      border-bottom: 1px solid #1a4a6e;
+      padding: 3.5rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .manifesto-strip h2 { font-size: 26px; font-weight: normal; color: #d6e8f5; line-height: 1.4; margin-bottom: 1.25rem; }
+    .manifesto-strip h2 em { font-style: italic; color: #c8a84a; }
+    .manifesto-strip p { font-size: 15px; color: #7a9bb8; line-height: 1.9; font-family: Arial, sans-serif; margin-bottom: 1rem; }
+    .manifesto-strip p strong { color: #c0cfe0; }
+    .manifesto-strip p:last-child { margin-bottom: 0; }
+
+    /* ── DIVIDER ── */
+    .divider { display: flex; align-items: center; gap: 1rem; padding: 0 2.5rem; background: #03213a; }
+    .divider-line { flex: 1; height: 1px; background: #1a4a6e; }
+    .divider-icon { color: #c8a84a; font-size: 18px; padding: 0.75rem 0; opacity: 0.7; }
+
+    /* ── COMING SOON ── */
+    .main-content { max-width: 1100px; margin: 0 auto; padding: 4rem 2.5rem; }
+    .coming-soon-area { text-align: center; padding: 5rem 2rem; border: 1px solid #1a4a6e; border-radius: 2px; position: relative; overflow: hidden; }
+    .coming-soon-area::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, #051a2e 0%, transparent 70%); pointer-events: none; }
+    .coming-soon-fish { font-size: 52px; margin-bottom: 1.5rem; opacity: 0.5; position: relative; }
+    .coming-soon-area h2 { font-size: 24px; font-weight: normal; color: #d6e8f5; margin-bottom: 1rem; position: relative; }
+    .coming-soon-area p { font-size: 15px; color: #7a9bb8; font-family: Arial, sans-serif; line-height: 1.8; max-width: 500px; margin: 0 auto 2rem; position: relative; }
+    .coming-soon-area a { display: inline-block; padding: 0.65rem 2rem; border: 1px solid #c8a84a; color: #c8a84a; font-size: 12px; font-family: Arial, sans-serif; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; position: relative; }
+    .coming-soon-area a:hover { background: #1a0f00; color: #e8c870; }
+
+    /* ── PITCH SECTION ── */
+    .pitch-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid #1a4a6e;
+      margin: 0 2.5rem 2rem;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .pitch-left {
+      padding: 3.5rem 3rem;
+      background: #051525;
+      border-right: 1px solid #1a4a6e;
+    }
+    .pitch-left .section-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #c8a84a; font-family: Arial, sans-serif; margin-bottom: 1.25rem; }
+    .pitch-left h2 { font-size: 26px; font-weight: normal; color: #d6e8f5; line-height: 1.4; margin-bottom: 1.25rem; }
+    .pitch-left p { font-size: 14px; color: #7a9bb8; font-family: Arial, sans-serif; line-height: 1.9; margin-bottom: 1rem; }
+    .pitch-left p strong { color: #c0cfe0; }
+    .pitch-cta {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 2rem;
+      border: 1px solid #c8a84a;
+      color: #c8a84a;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .pitch-cta:hover { background: #1a0f00; color: #e8c870; }
+
+    .pitch-right { padding: 3.5rem 3rem; }
+    .pitch-right .section-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #c8a84a; font-family: Arial, sans-serif; margin-bottom: 1.25rem; }
+    .pitch-right h3 { font-size: 16px; font-weight: normal; color: #d6e8f5; margin-bottom: 1.5rem; line-height: 1.5; }
+
+    .guideline-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .guideline-list li { display: flex; gap: 1rem; align-items: flex-start; }
+    .guideline-list li .guide-num { font-size: 11px; color: #c8a84a; font-family: Arial, sans-serif; letter-spacing: 0.1em; min-width: 24px; padding-top: 2px; }
+    .guideline-list li p { font-size: 13px; color: #7a9bb8; font-family: Arial, sans-serif; line-height: 1.7; margin: 0; }
+    .guideline-list li p strong { color: #c0cfe0; }
+
+    .pitch-note {
+      margin-top: 2rem;
+      padding: 1rem 1.25rem;
+      background: #03213a;
+      border: 1px solid #1a4a6e;
+      border-left: 3px solid #c8a84a;
+      border-radius: 2px;
+    }
+    .pitch-note p { font-size: 12px; color: #7a9bb8; font-family: Arial, sans-serif; line-height: 1.7; margin: 0; }
+    .pitch-note p strong { color: #c0cfe0; }
+
+    /* ── WHAT WE PUBLISH ── */
+    .what-strip {
+      margin: 0 2.5rem 2rem;
+      border: 1px solid #1a4a6e;
+      background: #051525;
+      padding: 3rem 3rem;
+      border-radius: 2px;
+    }
+    .what-strip .section-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: #c8a84a; font-family: Arial, sans-serif; margin-bottom: 1.5rem; }
+    .what-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .what-item h4 { font-size: 14px; font-weight: bold; color: #d6e8f5; font-family: Arial, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .what-item p { font-size: 13px; color: #7a9bb8; font-family: Arial, sans-serif; line-height: 1.7; }
+
+    /* ── NEWSLETTER ── */
+    .newsletter-strip {
+      margin: 0 2.5rem 2rem;
+      border: 1px solid #1a4a6e;
+      padding: 2.5rem 3rem;
+      border-radius: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .newsletter-strip h3 { font-size: 18px; font-weight: normal; color: #d6e8f5; margin-bottom: 0.4rem; }
+    .newsletter-strip p { font-size: 13px; color: #7a9bb8; font-family: Arial, sans-serif; }
+    .newsletter-strip a { display: inline-block; padding: 0.65rem 2rem; border: 1px solid #4a7fa8; color: #8ab4d4; font-size: 12px; font-family: Arial, sans-serif; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+    .newsletter-strip a:hover { background: #0a3352; color: #d6e8f5; }
+
+    /* ── FOOTER ── */
+    footer { background: #03213a; border-top: 1px solid #1a4a6e; padding: 2rem 2.5rem 1.5rem; font-family: Arial, sans-serif; margin-top: 2rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #1a4a6e; }
+    .footer-brand { font-size: 15px; font-weight: bold; letter-spacing: 0.12em; color: #c0cfe0; }
+    .footer-brand span { color: #8ab4d4; }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 11px; color: #8ab4d4; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; }
+    .footer-links a:hover { color: #d6e8f5; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    .footer-bottom span { font-size: 11px; color: #4a7fa8; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .manifesto-strip { grid-template-columns: 1fr; gap: 2rem; }
+      .pitch-section { grid-template-columns: 1fr; }
+      .pitch-left { border-right: none; border-bottom: 1px solid #1a4a6e; }
+      .what-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      nav { justify-content: space-between; padding: 1rem 1.5rem; }
+      .page-hero { padding: 3rem 1.5rem 2.5rem; min-height: auto; }
+      .page-hero h1 { font-size: 34px; }
+      .manifesto-strip { padding: 2.5rem 1.5rem; }
+      .main-content { padding: 2.5rem 1.5rem; }
+      .section-nav { padding: 0 1.5rem; }
+      .pitch-section { margin: 0 1rem 1.5rem; }
+      .pitch-left { padding: 2.5rem 1.5rem; }
+      .pitch-right { padding: 2.5rem 1.5rem; }
+      .what-strip { margin: 0 1rem 1.5rem; padding: 2rem 1.5rem; }
+      .newsletter-strip { margin: 0 1rem 1.5rem; padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+      footer { padding: 1.5rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .divider { padding: 0 1rem; }
+    }
+    @media (max-width: 480px) {
+      .page-hero h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="finance.html">Finance</a>
+  <a href="law.html">Law</a>
+  <a href="healthcare.html">Healthcare</a>
+  <a href="politics.html">Politics</a>
+  <a href="opinion.html">Opinion</a>
+  <a href="tidepool.html">Tidepool</a>
+  <a href="depth.html">Depth</a>
+  <a href="about.html">Our Story</a>
+  <a href="https://thenautisk.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer">Newsletter</a>
+  <a href="tips.html">Tips</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">THE <span>NAUTISK</span></a>
+  <div class="nav-links">
+    <a href="finance.html">Finance</a>
+    <a href="law.html">Law</a>
+    <a href="healthcare.html">Healthcare</a>
+    <a href="politics.html">Politics</a>
+    <a href="opinion.html" class="active">Opinion</a>
+    <a href="tidepool.html">Tidepool</a>
+    <a href="depth.html">Depth</a>
+    <a href="about.html">Our Story</a>
+    <a href="https://thenautisk.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer">Newsletter</a>
+    <a href="tips.html">Tips</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <svg class="fish-bg" viewBox="0 0 1440 380" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+
+    <!-- Manta Ray — wide, graceful, sweeping across the right side -->
+    <!-- Main body / wings -->
+    <path fill="none" stroke="#c8a84a" stroke-width="1.5" opacity="0.12"
+      d="M700,200 C780,160 900,140 1020,155 C1100,165 1160,180 1190,195 C1160,210 1100,225 1020,235 C900,250 780,240 700,200 Z" />
+    <!-- Left wing tip extension -->
+    <path fill="none" stroke="#c8a84a" stroke-width="1.2" opacity="0.1"
+      d="M700,200 C660,185 580,170 500,175 C460,178 430,188 420,198 C430,208 460,218 500,221 C580,226 660,215 700,200 Z" />
+    <!-- Right wing tip -->
+    <path fill="none" stroke="#c8a84a" stroke-width="1" opacity="0.1"
+      d="M1190,195 C1230,190 1290,188 1340,192 C1380,196 1420,202 1440,206" />
+    <path fill="none" stroke="#c8a84a" stroke-width="1" opacity="0.09"
+      d="M1190,195 C1230,200 1290,205 1340,202 C1380,199 1420,196 1440,194" />
+    <!-- Cephalic fins (head horns) -->
+    <path fill="none" stroke="#c8a84a" stroke-width="1" opacity="0.11"
+      d="M1160,182 C1175,165 1185,148 1178,135 C1170,148 1162,165 1160,182 Z" />
+    <path fill="none" stroke="#c8a84a" stroke-width="1" opacity="0.11"
+      d="M1170,208 C1185,225 1195,242 1188,255 C1180,242 1172,225 1170,208 Z" />
+    <!-- Tail -->
+    <path fill="none" stroke="#c8a84a" stroke-width="1" opacity="0.1"
+      d="M700,200 C675,198 648,200 630,205 C615,210 608,218 612,225 C620,228 635,224 650,218 C665,212 680,205 700,200 Z" />
+    <!-- Tail whip -->
+    <path fill="none" stroke="#c8a84a" stroke-width="0.8" opacity="0.09"
+      d="M612,225 C600,235 585,248 572,258 C560,268 550,274 545,270" />
+    <!-- Body center line / spine -->
+    <path fill="none" stroke="#c8a84a" stroke-width="0.7" opacity="0.09"
+      d="M620,200 C700,198 820,196 940,197 C1040,198 1120,200 1165,200" />
+    <!-- Gill slits -->
+    <path fill="none" stroke="#c8a84a" stroke-width="0.6" opacity="0.09" d="M1020,192 C1016,196 1015,201 1018,205" />
+    <path fill="none" stroke="#c8a84a" stroke-width="0.6" opacity="0.09" d="M1008,191 C1004,195 1003,200 1006,204" />
+    <path fill="none" stroke="#c8a84a" stroke-width="0.6" opacity="0.09" d="M996,191 C992,195 991,200 994,204" />
+    <!-- Eye -->
+    <circle cx="1140" cy="192" r="5" fill="none" stroke="#c8a84a" stroke-width="0.8" opacity="0.12" />
+    <!-- Wing texture lines -->
+    <path fill="none" stroke="#c8a84a" stroke-width="0.5" opacity="0.07" d="M850,160 C870,175 875,200 865,220" />
+    <path fill="none" stroke="#c8a84a" stroke-width="0.5" opacity="0.07" d="M780,168 C800,180 805,200 795,218" />
+    <path fill="none" stroke="#c8a84a" stroke-width="0.5" opacity="0.06" d="M920,155 C940,170 945,198 935,222" />
+    <path fill="none" stroke="#c8a84a" stroke-width="0.5" opacity="0.06" d="M600,180 C590,192 590,208 600,218" />
+    <path fill="none" stroke="#c8a84a" stroke-width="0.5" opacity="0.06" d="M540,184 C532,195 532,207 540,216" />
+    <!-- Bubbles trailing -->
+    <circle cx="480" cy="195" r="4" fill="none" stroke="#c8a84a" stroke-width="0.6" opacity="0.1" />
+    <circle cx="470" cy="182" r="3" fill="none" stroke="#c8a84a" stroke-width="0.5" opacity="0.08" />
+    <circle cx="462" cy="170" r="2" fill="none" stroke="#c8a84a" stroke-width="0.5" opacity="0.06" />
+    <circle cx="458" cy="205" r="2.5" fill="none" stroke="#c8a84a" stroke-width="0.5" opacity="0.08" />
+    <!-- Water surface -->
+    <path fill="none" stroke="#2a5f8a" stroke-width="0.8" opacity="0.2"
+      d="M0,300 C120,288 240,312 360,300 C480,288 600,312 720,300 C840,288 960,312 1080,300 C1200,288 1320,312 1440,300" />
+    <path fill="none" stroke="#2a5f8a" stroke-width="0.5" opacity="0.12"
+      d="M0,318 C120,308 240,328 360,318 C480,308 600,328 720,318 C840,308 960,328 1080,318 C1200,308 1320,328 1440,318" />
+  </svg>
+
+  <div class="tagline">By our compass</div>
+  <div class="accent-bar"></div>
+  <div class="section-tag">Opinion</div>
+  <h1>Perspectives that<br>cut against the <em>current.</em></h1>
+  <p>Opinion at The Nautisk is open to all voices. Freeform, thoughtful, and unafraid — this is where contributors say what they actually think.</p>
+</div>
+
+<!-- SECTION NAV -->
+<div class="section-nav">
+  <a href="opinion.html" class="active">All</a>
+  <a href="#">Finance</a>
+  <a href="#">Law</a>
+  <a href="#">Healthcare</a>
+  <a href="#">Politics</a>
+  <a href="#">Culture</a>
+</div>
+
+<!-- MANIFESTO -->
+<div class="manifesto-strip">
+  <div>
+    <h2>Opinion is not reporting.<br>It is <em>reasoning.</em></h2>
+    <p>The Nautisk covers the news. Opinion is where we — and our contributors — go further. It is where a writer takes a position, makes an argument, and stands behind it with their name.</p>
+    <p>We do not tell our contributors what to think. We ask only that they think carefully, write honestly, and make a case worth reading. <strong>The compass is theirs. The direction is up to them.</strong></p>
+  </div>
+  <div>
+    <p>Opinion pieces at The Nautisk are not endorsements of The Nautisk's editorial positions. Contributors speak for themselves. We publish perspectives that challenge, provoke, and illuminate — even when we do not agree with every word.</p>
+    <p>What we will not publish is work that misrepresents facts, attacks individuals without basis, or abandons the basic standards of honest argument. Opinion is a license to be bold. It is not a license to be careless.</p>
+    <p>If you have something to say — about a law that does not make sense, a market that rewards the wrong people, a health policy that is failing, or a political moment that demands a response — we want to hear from you.</p>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-icon">⚓</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- COMING SOON -->
+<div class="main-content">
+  <div class="coming-soon-area">
+    <div class="coming-soon-fish">🦅</div>
+    <h2>Opinion pieces coming soon.</h2>
+    <p>Our first contributors are being invited and first pieces are being written. If you have a perspective worth publishing, pitch it to us — we read every submission personally.</p>
+    <a href="mailto:opinion@thenautisk.com">Pitch us your idea</a>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-icon">⚓</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- PITCH SECTION -->
+<div class="pitch-section">
+  <div class="pitch-left">
+    <div class="section-label">Write for us</div>
+    <h2>Have something<br>to say?</h2>
+    <p>The Nautisk Opinion section is open to contributors from all backgrounds. You do not need to be a professional journalist. You need to have a point of view, a clear argument, and the willingness to put your name on it.</p>
+    <p>We cover <strong>finance, law, healthcare, and politics</strong> — but Opinion is freeform. If your piece does not fit a neat category, that is fine. If it does not fit what everyone else is saying, even better.</p>
+    <p>Send us a pitch — a few sentences describing what you want to argue and why it matters — and we will get back to you.</p>
+    <a href="mailto:opinion@thenautisk.com" class="pitch-cta">Send your pitch</a>
+  </div>
+  <div class="pitch-right">
+    <div class="section-label">What we look for</div>
+    <h3>A few things that make a strong Opinion submission.</h3>
+    <ul class="guideline-list">
+      <li>
+        <span class="guide-num">01</span>
+        <p><strong>A clear argument.</strong> Not a summary of events — a position. Tell us what you think and why you think it.</p>
+      </li>
+      <li>
+        <span class="guide-num">02</span>
+        <p><strong>Honest reasoning.</strong> Make your case with evidence and logic. We welcome bold takes. We do not publish misleading ones.</p>
+      </li>
+      <li>
+        <span class="guide-num">03</span>
+        <p><strong>A length that fits the argument.</strong> Most Opinion pieces run between 600 and 1,200 words. Some need more. Do not pad. Do not cut what matters.</p>
+      </li>
+      <li>
+        <span class="guide-num">04</span>
+        <p><strong>Your name on it.</strong> We publish named contributors only. Stand behind what you write.</p>
+      </li>
+      <li>
+        <span class="guide-num">05</span>
+        <p><strong>A fresh angle.</strong> We are not looking for the take that has already been written a hundred times. Tell us something we have not heard.</p>
+      </li>
+    </ul>
+    <div class="pitch-note">
+      <p><strong>Response time:</strong> We aim to respond to all pitches within 5 business days. Not every pitch will be accepted, but every one will be read.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-icon">⚓</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- WHAT WE PUBLISH -->
+<div class="what-strip">
+  <div class="section-label">Types of pieces we publish</div>
+  <div class="what-grid">
+    <div class="what-item">
+      <h4>The Argument</h4>
+      <p>A direct case for a position on a policy, decision, or issue. Clear, reasoned, and unafraid to take a side.</p>
+    </div>
+    <div class="what-item">
+      <h4>The Essay</h4>
+      <p>A longer, more exploratory piece that works through a complex idea without necessarily landing on a single answer.</p>
+    </div>
+    <div class="what-item">
+      <h4>The Response</h4>
+      <p>A direct reply to something published elsewhere — a law, a ruling, a speech, or another piece of writing worth engaging with.</p>
+    </div>
+    <div class="what-item">
+      <h4>The Personal</h4>
+      <p>First-person experience that illuminates a larger issue. Your story, connected to a story everyone should understand.</p>
+    </div>
+    <div class="what-item">
+      <h4>The Critique</h4>
+      <p>A rigorous examination of an idea, institution, or policy — what is wrong with it, why it matters, and what should change.</p>
+    </div>
+    <div class="what-item">
+      <h4>The Prediction</h4>
+      <p>A reasoned forecast about where something is heading — backed by evidence, not just instinct.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-icon">⚓</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter-strip">
+  <div>
+    <h3>Stay in the current.</h3>
+    <p>Subscribe to The Nautisk newsletter and never miss a new Opinion piece.</p>
+  </div>
+  <a href="https://thenautisk.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer">Subscribe free</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">THE <span>NAUTISK</span></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="finance.html">Finance</a>
+      <a href="law.html">Law</a>
+      <a href="healthcare.html">Healthcare</a>
+      <a href="politics.html">Politics</a>
+      <a href="tidepool.html">Tidepool</a>
+      <a href="depth.html">Depth</a>
+      <a href="about.html">Our Story</a>
+      <a href="tips.html">Tips</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 The Nautisk. All rights reserved.</span>
+    <span>Manhattan, New York</span>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+  });
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
