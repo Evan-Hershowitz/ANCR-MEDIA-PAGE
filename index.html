@@ -4,13 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Nautisk</title>
-
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-Frame-Options" content="DENY" />
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; script-src 'self' https://subscribe-forms.beehiiv.com; frame-src https://subscribe-forms.beehiiv.com;" />
-
   <meta name="description" content="The Nautisk — independent journalism covering finance, law, healthcare, and politics. Anchored in truth." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="The Nautisk" />
@@ -18,11 +16,9 @@
   <meta property="og:description" content="Independent journalism covering finance, law, healthcare, and politics. Anchored in truth." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.thenautisk.com" />
-
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Georgia, serif; background: #03213a; color: #e8eef4; }
-
     nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2.5rem; border-bottom: 1px solid #1a4a6e; background: #03213a; position: relative; z-index: 200; }
     .nav-left { display: flex; gap: 1.5rem; align-items: center; }
     .nav-right { display: flex; gap: 1.5rem; align-items: center; }
@@ -38,13 +34,11 @@
     .nav-btn-depth:hover { background: #1a4a6e; color: #d6e8f5; }
     .nav-btn-tips { font-size: 13px; color: #e8d5a3; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; font-family: Arial, sans-serif; background: transparent; border: 1px solid #a08040; cursor: pointer; padding: 0.4rem 0.9rem; border-radius: 20px; font-weight: bold; }
     .nav-btn-tips:hover { background: #2a1a00; color: #f0e0b0; }
-
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; z-index: 300; }
     .hamburger span { display: block; width: 24px; height: 2px; background: #8ab4d4; border-radius: 2px; transition: all 0.3s; }
     .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
     .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #03213a; z-index: 250; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
     .mobile-menu.open { display: flex; }
     .mobile-menu a, .mobile-menu button { font-size: 20px; color: #8ab4d4; text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; font-family: Arial, sans-serif; background: none; border: none; cursor: pointer; }
@@ -53,33 +47,27 @@
     .mobile-menu .mobile-depth { border: 1px solid #4a7fa8; color: #c0cfe0; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: bold; }
     .mobile-menu .mobile-tips { border: 1px solid #a08040; color: #e8d5a3; padding: 0.5rem 1.5rem; border-radius: 20px; font-weight: bold; }
     .mobile-divider { width: 40px; height: 1px; background: #1a4a6e; }
-
     .dropdown { position: relative; }
     .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #03213a; border: 1px solid #1a4a6e; min-width: 140px; z-index: 100; margin-top: 0.5rem; }
     .dropdown-menu a { display: block; padding: 0.6rem 1rem; font-size: 13px; color: #8ab4d4; text-decoration: none; font-family: Arial, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid #1a4a6e; }
     .dropdown-menu a:last-child { border-bottom: none; }
     .dropdown-menu a:hover { background: #0a3352; color: #d6e8f5; }
     .dropdown:hover .dropdown-menu { display: block; }
-
     .hero { padding: 5rem 2.5rem 4rem; text-align: center; background: #03213a; position: relative; overflow: hidden; min-height: 520px; }
     .hero-scene { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
     .hero-rule { width: 60px; height: 2px; background: #4a7fa8; margin: 0 auto 2rem; position: relative; }
     .hero h1 { font-size: 52px; font-weight: bold; color: #d6e8f5; line-height: 1.2; margin-bottom: 1.25rem; letter-spacing: 0.02em; position: relative; }
     .hero p { font-size: 16px; color: #7a9bb8; max-width: 500px; margin: 0 auto; line-height: 1.8; font-family: Arial, sans-serif; position: relative; }
-
     .white-section { background: #ffffff; color: #111111; position: relative; overflow: hidden; border: 2px solid #111111; margin: 1.5rem 2.5rem; border-radius: 2px; }
     .white-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='none' stroke='%23b8d4e8' stroke-width='1' d='M0,160 C180,100 360,220 540,160 C720,100 900,220 1080,160 C1260,100 1350,180 1440,160'/%3E%3Cpath fill='none' stroke='%23b8d4e8' stroke-width='1' d='M0,200 C180,140 360,260 540,200 C720,140 900,260 1080,200 C1260,140 1350,220 1440,200'/%3E%3Cpath fill='none' stroke='%23b8d4e8' stroke-width='0.5' d='M0,240 C180,180 360,300 540,240 C720,180 900,300 1080,240 C1260,180 1350,260 1440,240'/%3E%3C/svg%3E"); background-repeat: repeat-y; background-size: 100% auto; opacity: 0.4; pointer-events: none; }
-
     .divider { display: flex; align-items: center; gap: 1rem; padding: 0 2.5rem; background: #03213a; }
     .divider-line { flex: 1; height: 1px; background: #1a4a6e; }
     .divider-anchor { color: #4a7fa8; font-size: 22px; padding: 0.75rem 0; }
-
     .about { padding: 4rem 2.5rem; }
     .about-inner { max-width: 780px; margin: 0 auto; text-align: center; position: relative; }
     .section-label { font-size: 13px; font-weight: bold; letter-spacing: 0.2em; text-transform: uppercase; color: #03213a; font-family: Arial, sans-serif; margin-bottom: 1.5rem; }
     .about p { font-size: 16px; color: #333333; line-height: 1.9; font-family: Arial, sans-serif; }
     .about p strong { color: #03213a; }
-
     .coverage { padding: 3rem 2.5rem; }
     .coverage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
     .coverage-card { border: 1px solid #111111; padding: 2rem 1.5rem; text-align: center; background: #f7fafc; text-decoration: none; display: block; transition: border-color 0.2s; }
@@ -87,16 +75,24 @@
     .coverage-card .icon { font-size: 28px; margin-bottom: 1rem; }
     .coverage-card h3 { font-size: 15px; font-weight: bold; color: #03213a; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
     .coverage-card p { font-size: 13px; color: #555555; line-height: 1.7; font-family: Arial, sans-serif; }
-
-    .coming-soon { padding: 4rem 2.5rem; text-align: center; }
-    .coming-soon h2 { font-size: 22px; font-weight: bold; color: #03213a; margin-bottom: 1rem; }
-    .coming-soon p { font-size: 15px; color: #555555; font-family: Arial, sans-serif; line-height: 1.8; max-width: 480px; margin: 0 auto; }
-
+    .latest-stories { padding: 3rem 2.5rem; position: relative; }
+    .latest-stories .section-label { margin-bottom: 1.5rem; }
+    .article-grid-home { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+    .article-card-home { border: 1px solid #c8d8e8; padding: 1.6rem; background: #f7fafc; text-decoration: none; display: flex; flex-direction: column; transition: border-color 0.2s, box-shadow 0.2s; }
+    .article-card-home:hover { border-color: #4a7fa8; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .card-section-label { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-family: Arial, sans-serif; font-weight: bold; margin-bottom: 0.6rem; display: block; }
+    .card-section-label.finance { color: #1565c0; }
+    .card-section-label.law { color: #b71c1c; }
+    .card-section-label.healthcare { color: #1b5e20; }
+    .card-section-label.politics { color: #4a148c; }
+    .card-section-label.opinion { color: #e65100; }
+    .article-card-home h3 { font-size: 16px; color: #03213a; line-height: 1.4; margin-bottom: 0.6rem; font-weight: normal; font-family: Georgia, serif; flex-grow: 1; }
+    .article-card-home p { font-size: 13px; color: #555555; line-height: 1.7; font-family: Arial, sans-serif; margin-bottom: 0.85rem; }
+    .article-card-home .card-date { font-size: 11px; color: #888888; font-family: Arial, sans-serif; margin-top: auto; }
     .newsletter { padding: 3rem 2.5rem; text-align: center; }
     .newsletter h2 { font-size: 16px; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; color: #03213a; margin-bottom: 0.75rem; }
     .newsletter p { font-size: 14px; color: #555555; margin-bottom: 1.5rem; font-family: Arial, sans-serif; }
     .newsletter-form { display: flex; justify-content: center; flex-wrap: wrap; }
-
     footer { background: #03213a; border-top: 1px solid #1a4a6e; padding: 2.5rem 2.5rem 1.5rem; font-family: Arial, sans-serif; }
     .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; flex-wrap: wrap; gap: 2rem; }
     .footer-brand .footer-logo { font-size: 20px; font-weight: bold; letter-spacing: 0.14em; color: #c0cfe0; margin-bottom: 0.4rem; }
@@ -111,7 +107,6 @@
     .footer-legal { border-top: 1px solid #1a4a6e; padding-top: 1rem; margin-top: 1rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
     .footer-legal a { font-size: 11px; color: #4a7fa8; text-decoration: none; letter-spacing: 0.06em; }
     .footer-legal a:hover { color: #8ab4d4; }
-
     @media (max-width: 768px) {
       .nav-left, .nav-right { display: none; }
       .nav-center { position: static; transform: none; }
@@ -126,13 +121,13 @@
       .about { padding: 2.5rem 1.5rem; }
       .coverage { padding: 2rem 1.5rem; }
       .coverage-grid { grid-template-columns: 1fr; }
-      .coming-soon { padding: 2.5rem 1.5rem; }
+      .latest-stories { padding: 2rem 1.5rem; }
+      .article-grid-home { grid-template-columns: 1fr; }
       .newsletter { padding: 2.5rem 1.5rem; }
       .footer-top { flex-direction: column; gap: 1.5rem; }
       .footer-legal { gap: 1rem; flex-wrap: wrap; }
       .divider { padding: 0 1rem; }
     }
-
     @media (max-width: 480px) {
       .hero h1 { font-size: 26px; }
       .footer-legal a { font-size: 10px; }
@@ -140,7 +135,6 @@
   </style>
 </head>
 <body>
-
 <div class="mobile-menu" id="mobileMenu">
   <a href="#">News</a>
   <a href="#">Opinion</a>
@@ -152,7 +146,6 @@
   <a href="https://thenautisk.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer">Newsletter</a>
   <a href="#contact">Contact</a>
 </div>
-
 <nav>
   <div class="nav-left">
     <div class="dropdown">
@@ -168,26 +161,22 @@
     <a href="tidepool.html" class="nav-btn-tidepool">Tidepool</a>
     <a href="tips.html" class="nav-btn-tips">Tips</a>
   </div>
-
   <div class="nav-center">
     <img src="logo.png" alt="The Nautisk Logo" class="logo-img" />
     <span class="logo-text">THE <span>NAUTISK</span></span>
   </div>
-
   <div class="nav-right">
     <a href="depth.html" class="nav-btn-depth">Depth</a>
     <a href="about.html" class="nav-btn">Our Story</a>
     <a href="https://thenautisk.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer" class="nav-btn">Newsletter</a>
     <a href="#contact" class="nav-btn">Contact</a>
   </div>
-
   <button class="hamburger" id="hamburger" aria-label="Open menu">
     <span></span>
     <span></span>
     <span></span>
   </button>
 </nav>
-
 <section class="hero">
   <svg class="hero-scene" viewBox="0 0 1440 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
     <ellipse cx="150" cy="60" rx="60" ry="20" fill="none" stroke="#2a5f8a" stroke-width="0.8" opacity="0.2" />
@@ -237,61 +226,32 @@
     <path fill="none" stroke="#4a8aaa" stroke-width="1.8" opacity="0.45" d="M80,430 C120,400 200,395 260,415 C310,430 330,455 300,470 C260,488 180,488 130,468 C95,453 72,448 80,430 Z" />
     <path fill="none" stroke="#4a8aaa" stroke-width="1.5" opacity="0.4" d="M80,430 C65,420 40,410 20,418 C10,422 15,435 30,435 C15,440 5,455 18,460 C35,465 62,452 80,443" />
     <circle cx="270" cy="425" r="4" fill="none" stroke="#4a8aaa" stroke-width="1.2" opacity="0.4" />
-    <path fill="none" stroke="#4a8aaa" stroke-width="1" opacity="0.35" d="M220,398 C218,385 215,372 218,362" />
-    <path fill="none" stroke="#4a8aaa" stroke-width="0.8" opacity="0.3" d="M218,362 C214,352 222,345 226,355" />
-    <path fill="none" stroke="#4a8aaa" stroke-width="0.8" opacity="0.3" d="M218,362 C222,350 230,348 228,360" />
     <path fill="none" stroke="#4a8aaa" stroke-width="1.2" opacity="0.35" d="M180,415 C175,390 185,375 195,388 C200,400 190,412 180,415 Z" />
     <path fill="none" stroke="#5a9abf" stroke-width="1.8" opacity="0.4" d="M1050,420 C1060,408 1120,405 1180,408 C1230,410 1260,418 1258,430 C1255,442 1225,450 1175,450 C1115,450 1058,442 1050,430 Z" />
-    <rect x="1130" y="395" width="50" height="20" fill="none" stroke="#5a9abf" stroke-width="1.5" opacity="0.38" rx="3" />
-    <line x1="1150" y1="395" x2="1150" y2="370" stroke="#5a9abf" stroke-width="1.2" opacity="0.35" />
-    <line x1="1150" y1="370" x2="1168" y2="370" stroke="#5a9abf" stroke-width="1.2" opacity="0.35" />
-    <circle cx="1168" cy="370" r="3" fill="none" stroke="#5a9abf" stroke-width="1" opacity="0.35" />
     <circle cx="1052" cy="430" r="12" fill="none" stroke="#5a9abf" stroke-width="1" opacity="0.3" />
     <line x1="1052" y1="418" x2="1052" y2="442" stroke="#5a9abf" stroke-width="1" opacity="0.3" />
     <line x1="1040" y1="430" x2="1064" y2="430" stroke="#5a9abf" stroke-width="1" opacity="0.3" />
-    <circle cx="1100" cy="428" r="6" fill="none" stroke="#5a9abf" stroke-width="1" opacity="0.32" />
-    <circle cx="1125" cy="426" r="6" fill="none" stroke="#5a9abf" stroke-width="1" opacity="0.32" />
-    <circle cx="1200" cy="428" r="6" fill="none" stroke="#5a9abf" stroke-width="1" opacity="0.3" />
-    <path fill="none" stroke="#1a5a7a" stroke-width="0.8" opacity="0.2" d="M380,520 C372,488 390,462 378,432 C366,402 385,378 375,348 C368,328 380,312 375,298" />
-    <path fill="none" stroke="#1a5a7a" stroke-width="0.8" opacity="0.18" d="M410,520 C420,482 402,458 418,428 C434,398 412,375 425,345 C435,322 418,308 428,295" />
-    <path fill="none" stroke="#2a6a8a" stroke-width="0.8" opacity="0.22" d="M450,370 C464,363 485,367 492,376 C485,385 464,389 450,382 Z" />
-    <path fill="none" stroke="#2a6a8a" stroke-width="0.8" opacity="0.22" d="M446,376 L433,369 L433,383 Z" />
-    <path fill="none" stroke="#2a6a8a" stroke-width="0.7" opacity="0.18" d="M750,420 C764,413 785,417 792,426 C785,435 764,439 750,432 Z" />
-    <path fill="none" stroke="#2a6a8a" stroke-width="0.7" opacity="0.18" d="M746,426 L733,419 L733,433 Z" />
-    <circle cx="300" cy="360" r="4" fill="none" stroke="#2a5f8a" stroke-width="0.6" opacity="0.22" />
-    <circle cx="306" cy="342" r="3" fill="none" stroke="#2a5f8a" stroke-width="0.6" opacity="0.18" />
-    <circle cx="820" cy="400" r="3.5" fill="none" stroke="#2a5f8a" stroke-width="0.5" opacity="0.18" />
-    <circle cx="825" cy="382" r="2.5" fill="none" stroke="#2a5f8a" stroke-width="0.5" opacity="0.14" />
-    <line x1="620" y1="520" x2="620" y2="478" stroke="#1a4a6a" stroke-width="1.2" opacity="0.22" />
-    <line x1="608" y1="484" x2="632" y2="484" stroke="#1a4a6a" stroke-width="1.2" opacity="0.22" />
-    <path fill="none" stroke="#1a4a6a" stroke-width="1.2" opacity="0.22" d="M610,520 C610,508 630,508 630,520" />
-    <circle cx="620" cy="476" r="4" fill="none" stroke="#1a4a6a" stroke-width="1.2" opacity="0.22" />
   </svg>
-
   <div class="hero-rule"></div>
   <h1>Anchored in truth.<br>Driven by the current.</h1>
   <p>Complex news made understandable — finance, law, healthcare, and politics all in one place.</p>
 </section>
-
 <div class="divider">
   <div class="divider-line"></div>
   <span class="divider-anchor">⚓</span>
   <div class="divider-line"></div>
 </div>
-
 <section class="about white-section">
   <div class="about-inner">
     <div class="section-label">Who we are</div>
     <p>We shape the world, so it only makes sense that we begin to understand it. The Nautisk exists to make the stories that matter most accessible to everyone — not just the experts. We are achieving our mission if news becomes accessible, but most importantly <strong>UNDERSTANDABLE.</strong></p>
   </div>
 </section>
-
 <div class="divider">
   <div class="divider-line"></div>
   <span class="divider-anchor">⚓</span>
   <div class="divider-line"></div>
 </div>
-
 <section class="coverage white-section" id="coverage">
   <div class="section-label" style="position:relative;">What we cover</div>
   <div class="coverage-grid">
@@ -317,24 +277,52 @@
     </a>
   </div>
 </section>
-
 <div class="divider">
   <div class="divider-line"></div>
   <span class="divider-anchor">⚓</span>
   <div class="divider-line"></div>
 </div>
+<section class="latest-stories white-section">
+  <div class="section-label">Latest Stories</div>
+  <div class="article-grid-home">
 
-<section class="coming-soon white-section">
-  <h2>Stories coming soon.</h2>
-  <p>We are building something worth reading. Our first articles are on their way — check back shortly or get in touch if you have a tip.</p>
+    <!-- ADD NEW ARTICLE CARDS ABOVE THIS LINE -->
+
+    <a class="article-card-home" href="supreme-court-asylum-metering-ruling.html">
+      <span class="card-section-label politics">Politics</span>
+      <h3>Supreme Court Rules 6-3 That Government May Block Asylum Seekers by Preventing Border Entry</h3>
+      <p>The decision allows federal officials to keep people waiting indefinitely in Mexico, preventing them from filing asylum claims without triggering the legal protections that apply inside the U.S.</p>
+      <span class="card-date">June 26, 2026 &nbsp;·&nbsp; 4 min read</span>
+    </a>
+
+    <a class="article-card-home" href="chemours-pfas-settlement-450-million.html">
+      <span class="card-section-label law">Law</span>
+      <h3>Chemours Agrees to Pay $450 Million Over PFAS Contamination in Landmark Federal Settlement</h3>
+      <p>The deal — covering facilities in three states — marks the first time the federal government has held a PFAS manufacturer comprehensively accountable for contamination from its production sites.</p>
+      <span class="card-date">June 26, 2026 &nbsp;·&nbsp; 4 min read</span>
+    </a>
+
+    <a class="article-card-home" href="openai-ipo-delayed-2027.html">
+      <span class="card-section-label finance">Finance</span>
+      <h3>OpenAI Delays IPO to 2027 as Market Conditions Fall Short of $1 Trillion Target</h3>
+      <p>After confidentially filing to go public earlier this month, OpenAI reversed course — pointing to a rough post-debut showing by SpaceX and the company's ongoing cash burn as reasons to wait.</p>
+      <span class="card-date">June 26, 2026 &nbsp;·&nbsp; 4 min read</span>
+    </a>
+
+    <a class="article-card-home" href="glyphosate-antibiotic-resistance-study.html">
+      <span class="card-section-label healthcare">Healthcare</span>
+      <h3>Widely Used Weedkiller May Be Accelerating Antibiotic Resistance, Study Finds</h3>
+      <p>Researchers found that hospital bacteria resistant to last-resort antibiotics were also resistant to glyphosate, suggesting a biochemical link between agricultural herbicide use and drug-resistant infections.</p>
+      <span class="card-date">June 26, 2026 &nbsp;·&nbsp; 4 min read</span>
+    </a>
+
+  </div>
 </section>
-
 <div class="divider">
   <div class="divider-line"></div>
   <span class="divider-anchor">⚓</span>
   <div class="divider-line"></div>
 </div>
-
 <section class="newsletter white-section" id="newsletter">
   <h2>Stay in the current</h2>
   <p>Sign up for The Nautisk newsletter — clear, concise, and worth your time.</p>
@@ -342,13 +330,11 @@
     <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="3933c9e1-b702-4bed-a004-71e3fed21b16"></script>
   </div>
 </section>
-
 <div class="divider">
   <div class="divider-line"></div>
   <span class="divider-anchor">⚓</span>
   <div class="divider-line"></div>
 </div>
-
 <footer id="contact">
   <div class="footer-top">
     <div class="footer-brand">
@@ -392,7 +378,6 @@
     <a href="#">Advertise</a>
   </div>
 </footer>
-
 <script>
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -407,6 +392,5 @@
     });
   });
 </script>
-
 </body>
 </html>
